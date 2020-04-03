@@ -38,7 +38,28 @@ Sua escolha: '''))
         c = open('contas.txt').read().splitlines()
         for linhas in c:
             print(linhas)
-        excluir = int(input('Digite o ID da conta que deseja excluir: '))
+        excluir = str(input('Digite o ID da conta que deseja excluir: ')).strip()
+        b = open('contas.txt').read().split()
+        if excluir == b[4]:
+            print('PROBLEMAS AQUI')
+    elif e == 3:
+        c = open('contas.txt').read().splitlines()
+        for ler in c:
+            print(ler)
+        senha = str(input('\nDigite a senha que deseja mudar: ')).strip()
+        novasenha = str(input('Digite uma nova senha: ')).strip()
+        b = open('contas.txt')
+        q = b.readlines()
+        for num in range(len(q)):
+            if senha in q[num]:
+                q[num] = f'Senha: {novasenha}\n'
+                b = open('contas.txt', 'w')
+                b.writelines(q)
+                b.close()
+    elif e == 4:
+        c = open('contas.txt').read().splitlines()
+        for ler in c:
+            print(ler)
     elif e == 5:
         e1 = 0
         print('\nPrograma encerrado com sucesso!')
