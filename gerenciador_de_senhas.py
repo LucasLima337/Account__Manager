@@ -10,29 +10,30 @@ while e1 == 2:
 [2] Excluir uma conta adicionada
 [3] Alterar uma senha existente
 [4] Ver suas contas salvas
-[5] Encerrar Programa
+[5] Excluir TODAS as contas salvas
+[6] Encerrar Programa
 Sua escolha: '''))
     if e == 1:
         e1 = 1
         while e1 == 1:
             num = random.randint(1, 100)
-            social = str(input('\nDigite o nome de uma rede social ou site: ')).strip().title()
+            social = str(input('\nDigite o nome de uma rede social ou site: ')).strip().capitalize()
             user = str(input('Digite o seu nome de usuário: ')).strip()
             password = str(input('Digite a sua senha: ')).strip()
             c = open('contas.txt', 'a')
-            c.write('=-=' * 10)
+            c.write('=-=' * 15)
             c.write(f'\nID da Conta: {num}\n')
             c.write(f'\nRede Social ou Site: {social}\n')
             c.write(f'Usuario: {user}\n')
             c.write(f'Senha: {password}\n')
-            c.write('=-=' * 10)
+            c.write('=-=' * 15)
             c.write('\n\n')
             c.close()
             e1 = int(input('''\nDeseja Adicionar uma nova conta?
 [1] SIM
 [2] NÃO
 Sua escolha: '''))
-            print('=' * 50)
+            print('=' * 80)
     elif e == 2:
         print('\n')
         c = open('contas.txt').read().splitlines()
@@ -70,5 +71,18 @@ Sua escolha: '''))
         for ler in c:
             print(ler)
     elif e == 5:
+        esw = int(input('''\nDeseja mesmo excluir TODAS as suas contas?
+[1] SIM
+[2] NÃO
+Sua escolha: '''))
+        if esw == 1:
+            b = open('contas.txt')
+            q = b.read().splitlines()
+            q = ''
+            b = open('contas.txt', 'w')
+            b.writelines(q)
+            b.close()
+            print('\nTodas as suas contas foram excluídas com sucesso!!\n')
+    elif e == 6:
         e1 = 0
         print('\nPrograma encerrado com sucesso!\n')
