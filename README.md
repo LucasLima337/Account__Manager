@@ -1,6 +1,6 @@
 # Account Manager
 Program created using Python language that allows the user keep your credentials (Username and Password) saved in a organized .TXT file!
 
-O programa conta com opções como "Adicionar contas", "Excluir um conta", "Alterar a senha de uma conta adicionada", "Excluir todas as contas salvas" e o mais importante "Visualizar contas que foram adicionadas".
+The program has some features like "Add accounts", "Delete an account", "Update the password for an existing account", "Delete all of the saved accounts", and the most important "View added accounts".
 
-OBS: O arquivo "contas.txt" é necessário porque será onde o programa irá armazenar suas contas.
+OBS: The file "contas.txt" is necessary because the program will save your accounts there.
